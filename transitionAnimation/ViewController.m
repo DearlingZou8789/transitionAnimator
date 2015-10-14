@@ -13,9 +13,10 @@
 //UINavigationControllerDelegate通过导航控制器展示的过渡动画
 //树形结构导航自定义过渡动画
 //
-@interface ViewController ()<UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
+@interface ViewController ()<UINavigationControllerDelegate>//, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UIView *redView;
 
 @end
 
@@ -24,7 +25,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    UIGravityBehavior *behavior = [[UIGravityBehavior alloc] init];
+    [animator addBehavior:behavior];
+    [behavior addItem:self.redView];
 }
 
 - (void)setTitleStr:(NSString *)titleStr

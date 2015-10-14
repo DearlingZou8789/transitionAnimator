@@ -15,12 +15,12 @@
 		E4760D8D1BCDFE0500FCD85C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4760D8B1BCDFE0500FCD85C /* LaunchScreen.storyboard */; };
 		E4760D981BCDFE0500FCD85C /* transitionAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760D971BCDFE0500FCD85C /* transitionAnimationTests.m */; };
 		E4760DA31BCDFE0500FCD85C /* transitionAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DA21BCDFE0500FCD85C /* transitionAnimationUITests.m */; };
-		E4760DB21BCE011C00FCD85C /* SliderTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB11BCE011C00FCD85C /* SliderTransitionAnimator.m */; settings = {ASSET_TAGS = (); }; };
-		E4760DBC1BCE39AF00FCD85C /* HUTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB51BCE39AF00FCD85C /* HUTransitionAnimator.m */; settings = {ASSET_TAGS = (); }; };
-		E4760DBD1BCE39AF00FCD85C /* HUTransitionGhostAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB71BCE39AF00FCD85C /* HUTransitionGhostAnimator.m */; settings = {ASSET_TAGS = (); }; };
-		E4760DBE1BCE39AF00FCD85C /* HUTransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB91BCE39AF00FCD85C /* HUTransitionHorizontalLinesAnimator.m */; settings = {ASSET_TAGS = (); }; };
-		E4760DBF1BCE39AF00FCD85C /* HUTransitionVerticalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DBB1BCE39AF00FCD85C /* HUTransitionVerticalLinesAnimator.m */; settings = {ASSET_TAGS = (); }; };
-		E4760DC31BCE526900FCD85C /* animatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DC21BCE526900FCD85C /* animatorTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E4760DB21BCE011C00FCD85C /* SliderTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB11BCE011C00FCD85C /* SliderTransitionAnimator.m */; };
+		E4760DBC1BCE39AF00FCD85C /* HUTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB51BCE39AF00FCD85C /* HUTransitionAnimator.m */; };
+		E4760DBD1BCE39AF00FCD85C /* HUTransitionGhostAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB71BCE39AF00FCD85C /* HUTransitionGhostAnimator.m */; };
+		E4760DBE1BCE39AF00FCD85C /* HUTransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DB91BCE39AF00FCD85C /* HUTransitionHorizontalLinesAnimator.m */; };
+		E4760DBF1BCE39AF00FCD85C /* HUTransitionVerticalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DBB1BCE39AF00FCD85C /* HUTransitionVerticalLinesAnimator.m */; };
+		E4760DC31BCE526900FCD85C /* animatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4760DC21BCE526900FCD85C /* animatorTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -466,6 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangle.in.transitionAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -480,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangle.in.transitionAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -550,6 +552,7 @@
 				E4760DA91BCDFE0500FCD85C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4760DAA1BCDFE0500FCD85C /* Build configuration list for PBXNativeTarget "transitionAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +561,7 @@
 				E4760DAC1BCDFE0500FCD85C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4760DAD1BCDFE0500FCD85C /* Build configuration list for PBXNativeTarget "transitionAnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +570,7 @@
 				E4760DAF1BCDFE0500FCD85C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import "animatorTableViewController.h"
 #import "ViewController.h"
+#import "HUTransitionAnimator.h"
 
 typedef NS_ENUM(NSInteger, HUTransitionType)
 {
@@ -16,7 +17,7 @@ typedef NS_ENUM(NSInteger, HUTransitionType)
     TransitionVerticalLines,
     TransitionHorizontalLines
 };
-@interface animatorTableViewController ()
+@interface animatorTableViewController ()<UIViewControllerTransitioningDelegate, UINavigationControllerDelegate>
 @property (nonatomic) HUTransitionType transitionType;
 @end
 
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSInteger, HUTransitionType)
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,7 +114,43 @@ typedef NS_ENUM(NSInteger, HUTransitionType)
 
 
 #pragma mark - Navigation
+#pragma mark - UINavigationControllerDelegate
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    HUTransitionAnimator *animator;
+    switch (self.transitionType)
+    {
+        case TransitionGhost:
+            animator = [[HUTransitionGhostAnimator alloc] init];
+            break;
+        case TransitionVerticalLines:
+            animator = [[HUTransitionVerticalLinesAnimator alloc] init];
+            break;
+        case TransitionHorizontalLines:
+            animator = [[HUTransitionHorizontalLinesAnimator alloc] init];
+            break;
+        case Transition6Style:
+            animator = [[HUTransitionAnimator alloc] init];
+            break;
+    }
+    animator.presenting = (operation == UINavigationControllerOperationPush) ? NO: YES;
+    return animator;
+}
 
+#pragma mark - UIViewControllerTransitioningDelegate
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    id transition = [[HUTransitionVerticalLinesAnimator alloc] init];
+    return transition;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    id transition = [[HUTransitionHorizontalLinesAnimator alloc] init];
+    return transition;
+}
+
+#pragma mark - storyboard跳转
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -135,6 +173,7 @@ typedef NS_ENUM(NSInteger, HUTransitionType)
         self.transitionType = TransitionHorizontalLines;
     }
     ViewController *vc = [segue destinationViewController];
+    vc.titleStr = identify;
     vc.transitioningDelegate = self;
 }
 

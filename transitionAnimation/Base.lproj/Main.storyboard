@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RhG-Sp-dUD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RhG-Sp-dUD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,6 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1v-br-Q8M">
                                 <rect key="frame" x="219" y="179" width="162" height="44"/>
+                                <animations/>
                                 <state key="normal" title="跳转下一个视图"/>
                                 <connections>
                                     <action selector="nextVCAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JVA-Rg-RQf"/>
@@ -26,22 +27,31 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAM-Sn-Zub">
                                 <rect key="frame" x="265" y="103" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oy-pJ-Rby">
                                 <rect key="frame" x="226" y="285" width="149" height="30"/>
+                                <animations/>
                                 <state key="normal" title="返回上一个视图"/>
                                 <connections>
                                     <action selector="topVCAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4LJ-JT-Uip"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-be-1cT">
+                                <rect key="frame" x="158" y="361" width="100" height="100"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.2470588235" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CVH-wl-wRw"/>
                     <connections>
+                        <outlet property="redView" destination="NJs-be-1cT" id="LNv-2v-Iit"/>
                         <outlet property="textLabel" destination="iAM-Sn-Zub" id="ea8-dJ-vHp"/>
                     </connections>
                 </viewController>
@@ -56,37 +66,33 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="skc-3s-kh1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Root ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9nZ-Fw-Ecu">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aa2-6h-fi6">
-                            <rect key="frame" x="0.0" y="312" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="树形导航"/>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="treeNavgation" id="u7R-GC-oUQ"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="6Style" id="Gfa-Om-dY2">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gfa-Om-dY2" id="iiW-HH-JPc">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transition6Style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjP-aw-zOv">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="TjP-aw-zOv" secondAttribute="trailing" id="6ho-cr-LLW"/>
                                         <constraint firstItem="TjP-aw-zOv" firstAttribute="top" secondItem="iiW-HH-JPc" secondAttribute="top" id="Ddg-a8-3i8"/>
@@ -94,24 +100,27 @@
                                         <constraint firstItem="TjP-aw-zOv" firstAttribute="leading" secondItem="iiW-HH-JPc" secondAttribute="leading" id="gjZ-HE-W2k"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="6Style" id="3C4-Vb-11x"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="6Style" id="3C4-Vb-11x"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ghost" id="RhV-J0-JNY">
                                 <rect key="frame" x="0.0" y="180" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RhV-J0-JNY" id="yvi-3K-rT8">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TransitionGhost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzd-3d-m6d">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Nzd-3d-m6d" secondAttribute="trailing" id="PPE-Wt-H9J"/>
                                         <constraint firstItem="Nzd-3d-m6d" firstAttribute="top" secondItem="yvi-3K-rT8" secondAttribute="top" id="c9c-1z-2Rq"/>
@@ -119,24 +128,27 @@
                                         <constraint firstAttribute="bottom" secondItem="Nzd-3d-m6d" secondAttribute="bottom" id="vPp-Y9-UqI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Ghost" id="uHb-3h-wh7"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Ghost" id="uHb-3h-wh7"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerticalLines" id="99e-a7-v4z">
                                 <rect key="frame" x="0.0" y="224" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="99e-a7-v4z" id="OY1-rT-72J">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TransitionVerticalLines" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-Dg-SC8">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="wyn-Dg-SC8" secondAttribute="trailing" id="FHB-M8-aZi"/>
                                         <constraint firstItem="wyn-Dg-SC8" firstAttribute="top" secondItem="OY1-rT-72J" secondAttribute="top" id="Mfe-VO-cH5"/>
@@ -144,24 +156,27 @@
                                         <constraint firstItem="wyn-Dg-SC8" firstAttribute="leading" secondItem="OY1-rT-72J" secondAttribute="leading" id="rYA-nx-sGr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="VerticalLines" id="wiD-L4-GAW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="VerticalLines" id="wiD-L4-GAW"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HorizontalLines" id="99P-H9-SE1">
                                 <rect key="frame" x="0.0" y="268" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="99P-H9-SE1" id="tjr-pp-frf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TransitionHorizontalLines" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIY-1u-Bgm">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="RIY-1u-Bgm" firstAttribute="top" secondItem="tjr-pp-frf" secondAttribute="top" id="R8I-Qe-8MB"/>
                                         <constraint firstAttribute="trailing" secondItem="RIY-1u-Bgm" secondAttribute="trailing" id="SCP-4h-DNS"/>
@@ -169,8 +184,9 @@
                                         <constraint firstItem="RIY-1u-Bgm" firstAttribute="leading" secondItem="tjr-pp-frf" secondAttribute="leading" id="gGa-Ij-CB6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="HorizontalLines" id="3vE-K5-FCp"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="HorizontalLines" id="3vE-K5-FCp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -192,6 +208,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="abq-4F-oGn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="qQr-ja-Hf4" kind="relationship" relationship="rootViewController" id="grU-FL-kWw"/>
@@ -203,6 +220,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3vE-K5-FCp"/>
+        <segue reference="3C4-Vb-11x"/>
     </inferredMetricsTieBreakers>
 </document>
